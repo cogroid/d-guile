@@ -29,6 +29,12 @@ ldd --version
 sudo apt install flex
 ```
 
+###### GNU libunistring
+
+```
+sudo apt install libunistring-dev
+```
+
 ###### GCC 32 bit
 
 ```
