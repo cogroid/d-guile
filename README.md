@@ -29,6 +29,12 @@ ldd --version
 sudo apt install flex
 ```
 
+###### gdb
+
+```
+sudo apt install gdb
+```
+
 ###### GNU libunistring
 
 ```
