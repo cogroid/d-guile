@@ -35,6 +35,12 @@ sudo apt install flex
 sudo apt install gdb
 ```
 
+###### libiconv-hook-dev
+
+```
+sudo apt install libiconv-hook-dev
+```
+
 ###### GNU libunistring
 
 ```
