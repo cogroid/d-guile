@@ -23,6 +23,12 @@ ldd --version
 
 * Ubuntu 18.04
 
+###### Flex
+
+```
+sudo apt install flex
+```
+
 ###### GCC 32 bit
 
 ```
