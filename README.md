@@ -29,6 +29,18 @@ ldd --version
 sudo apt install flex
 ```
 
+###### gdb
+
+```
+sudo apt install gdb
+```
+
+###### libiconv-hook-dev
+
+```
+sudo apt install libiconv-hook-dev
+```
+
 ###### GNU libunistring
 
 ```
