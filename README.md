@@ -73,8 +73,19 @@ sudo apt install clang
 ### Build for x64 machine
 
 ```
+sudo apt update
 cd ${GUILE_DIR}/make/x64
-make
+make > build.log&
+```
+
+```
+sudo apt update
+cd ${GUILE_DIR}/make/x64
+make install
+```
+
+```
+Built files are at /home/cogroid/local/guile/x64
 ```
 
 ### Build for i586 machine
