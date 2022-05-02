@@ -91,8 +91,25 @@ Built files are at /home/cogroid/local/guile/x64
 ### Build for i586 machine
 
 ```
+sudo apt update
 cd ${GUILE_DIR}/make/i386
-make
+make > configure.log&
+```
+
+```
+sudo apt update
+cd ${GUILE_DIR}/make/i386
+make build > build.log&
+```
+
+```
+sudo apt update
+cd ${GUILE_DIR}/make/i386
+make install
+```
+
+```
+Built files are at /home/cogroid/local/guile/i386
 ```
 
 ### Build for armv7-a machine
