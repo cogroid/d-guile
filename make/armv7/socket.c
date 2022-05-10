@@ -143,8 +143,8 @@ SCM_DEFINE (scm_inet_makeaddr, "inet-makeaddr", 2, 0, 0,
 
   netnum = SCM_NUM2ULONG (1, net);
   lnanum = SCM_NUM2ULONG (2, lna);
-  unsigned long addr_ = (unsigned long) inet_makeaddr (netnum, lnanum);
-  return scm_from_ulong (ntohl (addr_));
+  addr = inet_makeaddr (netnum, lnanum);
+  return scm_from_ulong (ntohl (addr.s_addr));
 }
 #undef FUNC_NAME
 #endif
