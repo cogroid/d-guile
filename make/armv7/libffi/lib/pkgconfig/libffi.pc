@@ -1,4 +1,4 @@
-prefix=/home/cogroid/local/libffi/armv7
+prefix=/data/data/com.cogroid.atomspace.tester/libffi
 exec_prefix=${prefix}
 libdir=${exec_prefix}/lib
 toolexeclibdir=${exec_prefix}/lib

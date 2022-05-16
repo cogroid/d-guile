@@ -121,10 +121,6 @@
 # if defined(__rtems__) && (defined(i386) || defined(__i386__))
 #   define GC_RTEMS_PTHREADS
 # endif
-# if defined(__gnu_hurd__)
-#   define GC_GNU_THREADS
-#   define GC_PTHREADS
-# endif
 #endif /* GC_THREADS */
 
 #undef GC_PTHREADS
