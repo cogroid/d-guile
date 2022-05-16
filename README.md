@@ -114,6 +114,12 @@ Built files are at /home/cogroid/local/guile/i386
 
 ### Build for armv7-a machine
 
+Set APP_PKG to package name of your android app.
+
+```
+export APP_PKG=com.cogroid.atomspace.tester
+```
+
 ```
 sudo apt update
 cd ${GUILE_DIR}/make/armv7
