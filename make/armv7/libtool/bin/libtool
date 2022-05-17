@@ -168,7 +168,7 @@ lock_old_archive_extraction=no
 LTCC="arm-linux-androideabi-gcc"
 
 # LTCC compiler flags.
-LTCFLAGS="-g -O2"
+LTCFLAGS=" -stdlib=libc++  -v --target=arm-linux-androideabi -march=armv7-a -fPIC -fno-integrated-as --sysroot /home/cogroid/local/android-ndk-r18b/sysroot -isystem /home/cogroid/local/android-ndk-r18b/sysroot/usr/include/arm-linux-androideabi -D__ANDROID_API__=18 -fexceptions -frtti -ffunction-sections -funwind-tables -fstack-protector-strong -Wno-invalid-command-line-argument -Wno-unused-command-line-argument -no-canonical-prefixes -I/home/cogroid/local/android-ndk-r18b/sources/cxx-stl/llvm-libc++/include -I/home/cogroid/local/android-ndk-r18b/sources/cxx-stl/llvm-libc++abi/include -I/home/cogroid/local/android-ndk-r18b/sources/android/support/include -DANDROID -Wa,--noexecstack -Wformat -Werror=format-security -DNDEBUG -O2 -I/usr/include -L/home/cogroid/local/android-ndk-r18b/platforms/android-24/arch-arm/usr/lib -B/home/cogroid/local/android-ndk-r18b/platforms/android-24/arch-arm/usr/lib -L/home/cogroid/local/android-ndk-r18b/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/lib/gcc/arm-linux-androideabi/4.9.x/armv7-a/thumb -B/home/cogroid/local/android-ndk-r18b/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/lib/gcc/arm-linux-androideabi/4.9.x/armv7-a/thumb -L/home/cogroid/local/android-ndk-r18b/sources/cxx-stl/llvm-libc++/libs/armeabi-v7a -B/home/cogroid/local/android-ndk-r18b/sources/cxx-stl/llvm-libc++/libs/armeabi-v7a  "
 
 # Take the output of nm and produce a listing of raw symbols and C names.
 global_symbol_pipe="sed -n -e 's/^.*[	 ]\\([ABCDGIRSTW][ABCDGIRSTW]*\\)[	 ][	 ]*\\([_A-Za-z][_A-Za-z0-9]*\\)\$/\\1 \\2 \\2/p' | sed '/ __gnu_lto/d'"
@@ -204,7 +204,7 @@ objdir=.libs
 MAGIC_CMD=file
 
 # Must we lock files when doing compilation?
-need_locks="no"
+need_locks="yes"
 
 # Manifest tool.
 MANIFEST_TOOL=":"
@@ -324,10 +324,10 @@ CC="arm-linux-androideabi-gcc"
 with_gcc=yes
 
 # Compiler flag to turn off builtin functions.
-no_builtin_flag=" -fno-builtin -fno-rtti -fno-exceptions"
+no_builtin_flag=" -fno-builtin"
 
 # Additional compiler flags for building library objects.
-pic_flag=" -fPIC -DPIC"
+pic_flag=""
 
 # How to pass a linker flag through the compiler.
 wl="-Wl,"
@@ -336,7 +336,7 @@ wl="-Wl,"
 link_static_flag=""
 
 # Does compiler simultaneously support -c and -o options?
-compiler_c_o="yes"
+compiler_c_o="no"
 
 # Whether or not to add -lc for building shared libraries.
 build_libtool_need_lc=no
@@ -11683,7 +11683,7 @@ with_gcc=yes
 no_builtin_flag=" -fno-builtin"
 
 # Additional compiler flags for building library objects.
-pic_flag=" -fPIC -DPIC"
+pic_flag=""
 
 # How to pass a linker flag through the compiler.
 wl="-Wl,"
@@ -11692,7 +11692,7 @@ wl="-Wl,"
 link_static_flag=""
 
 # Does compiler simultaneously support -c and -o options?
-compiler_c_o="yes"
+compiler_c_o="no"
 
 # Whether or not to add -lc for building shared libraries.
 build_libtool_need_lc=no
@@ -11795,18 +11795,18 @@ file_list_spec=""
 hardcode_action=immediate
 
 # The directories searched by this compiler when creating a shared library.
-compiler_lib_search_dirs="/home/cogroid/local/android-ndk-r18b/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/7.0.2/lib/linux/arm /lib/../lib /usr/lib/../lib /lib /usr/lib"
+compiler_lib_search_dirs="/home/cogroid/local/android-ndk-r18b/platforms/android-24/arch-arm/usr/lib /home/cogroid/local/android-ndk-r18b/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/lib/gcc/arm-linux-androideabi/4.9.x/armv7-a/thumb /home/cogroid/local/android-ndk-r18b/sources/cxx-stl/llvm-libc++/libs/armeabi-v7a /home/cogroid/local/android-ndk-r18b/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../../../../llvm/prebuilt/linux-x86_64/lib64/clang/7.0.2/lib/linux/arm /home/cogroid/local/android-ndk-r18b/sysroot/usr/lib/../lib /home/cogroid/local/android-ndk-r18b/sysroot/usr/lib"
 
 # Dependencies to place before and after the objects being linked to
 # create a shared library.
-predep_objects="crtbegin_so.o"
-postdep_objects="crtend_so.o"
+predep_objects="/home/cogroid/local/android-ndk-r18b/platforms/android-24/arch-arm/usr/lib/crtbegin_so.o"
+postdep_objects="/home/cogroid/local/android-ndk-r18b/platforms/android-24/arch-arm/usr/lib/crtend_so.o"
 predeps=""
-postdeps="-lstdc++ -lm -lgcc -ldl -lc -lgcc -ldl"
+postdeps="-lc++ -lm -lgcc -ldl -lc -lgcc -ldl"
 
 # The library search path used internally by the compiler when linking
 # a shared library.
-compiler_lib_search_path="-L/home/cogroid/local/android-ndk-r18b/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/7.0.2/lib/linux/arm -L/lib/../lib -L/usr/lib/../lib -L/lib -L/usr/lib"
+compiler_lib_search_path="-L/home/cogroid/local/android-ndk-r18b/platforms/android-24/arch-arm/usr/lib -L/home/cogroid/local/android-ndk-r18b/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/lib/gcc/arm-linux-androideabi/4.9.x/armv7-a/thumb -L/home/cogroid/local/android-ndk-r18b/sources/cxx-stl/llvm-libc++/libs/armeabi-v7a -L/home/cogroid/local/android-ndk-r18b/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/../../../../llvm/prebuilt/linux-x86_64/lib64/clang/7.0.2/lib/linux/arm -L/home/cogroid/local/android-ndk-r18b/sysroot/usr/lib/../lib -L/home/cogroid/local/android-ndk-r18b/sysroot/usr/lib"
 
 # ### END LIBTOOL TAG CONFIG: CXX
 

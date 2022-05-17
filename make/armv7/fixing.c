@@ -44,14 +44,14 @@ const unsigned short **__ctype_b_loc(void)
 	return (const unsigned short **)&ptable;
 }
 
-void __assert_fail(const char *assertion, const char *file, unsigned int line, const char *function);
+//void __assert_fail(const char *assertion, const char *file, unsigned int line, const char *function);
 
 char *nl_langinfo(nl_item item);
 
 char *nl_langinfo_l(nl_item item, locale_t loc);
 
-void __assert_fail(const char *assertion, const char *file, unsigned int line, const char *function) {
 /*
+void __assert_fail(const char *assertion, const char *file, unsigned int line, const char *function) {
 	FILE *fp;
 	fp = fopen("/storage/emulated/0/Download/error_log.txt", "r");
 	if (fp == NULL) {
@@ -62,11 +62,12 @@ void __assert_fail(const char *assertion, const char *file, unsigned int line, c
 	}
 	fprintf(fp, "\n%s : %s : %d : %s\n", assertion, file, line, function);
 	fclose(fp);
-*/
+
 	printf("\n[__assert_fail] %s : %s\n", assertion, file);
 	//abort();
 	//exit(0);
 }
+*/
 
 char *nl_langinfo(nl_item item) {
 	char *rs = strdup("UTF-8");
